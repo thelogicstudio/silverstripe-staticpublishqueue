@@ -185,6 +185,7 @@ class FilesystemPublisher extends Publisher
         if (file_put_contents($temporaryPath, $content) === false) {
             return false;
         }
+        chmod($temporaryPath, 0644);
 
         // Move the temporary file to the desired location (prevents unlocked files from being read during write)
         $publishPath = $this->getDestPath() . DIRECTORY_SEPARATOR . $filePath;
