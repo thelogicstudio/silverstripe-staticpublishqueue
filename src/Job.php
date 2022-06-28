@@ -17,6 +17,8 @@ abstract class Job extends AbstractQueuedJob
 {
     use Configurable;
     use Extensible;
+    
+    protected $URLsToProcess = [];
 
     /**
      * Number of URLs processed during one call of @see AbstractQueuedJob::process()
